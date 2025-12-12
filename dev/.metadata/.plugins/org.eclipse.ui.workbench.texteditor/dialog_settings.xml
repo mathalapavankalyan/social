@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item key="hasShownOverlayPopupBefore" value="true"/>
+	<section name="java.lang.Class">
+		<item key="replaceBarOpen" value="false"/>
+		<list key="findhistory">
+			<item value="kafka"/>
+			<item value="spring-cloud-starter-netflix"/>
+			<item value="kaf"/>
+			<item value="jwt"/>
+			<item value="map"/>
+			<item value="jpa"/>
+			<item value="mong"/>
+			<item value="mongo"/>
+			<item value="web"/>
+			<item value="client"/>
+			<item value="mysql"/>
+			<item value="org.mapstruct"/>
+			<item value="Bean "/>
+			<item value="productOfDigitss"/>
+		</list>
+	</section>
+</section>

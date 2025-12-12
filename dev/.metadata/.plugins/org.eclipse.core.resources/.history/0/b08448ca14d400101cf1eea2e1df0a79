@@ -1,0 +1,32 @@
+package com.message.service.impl;
+
+import org.springframework.stereotype.Service;
+
+import com.message.collection.Message;
+import com.message.dto.ChatMessageEvent;
+import com.message.kafka.KafkaProducerService;
+import com.message.repository.MessageRepository;
+import com.message.service.MessageService;
+
+import lombok.RequiredArgsConstructor;
+
+@Service
+@RequiredArgsConstructor
+public class MessageServiceImpl implements MessageService{
+	
+	private final MessageRepository messageRepository;
+	
+	private final KafkaProducerService kafkaProducerService;
+
+	@Override
+	public void saveIncomingMessage(ChatMessageEvent event) {
+		 Message message = new Message();
+	        message.setSenderId(event.getSenderId());
+	        message.setReceiverId(event.getReceiverId());
+	        message.setContent(event.getContent());
+	        message.setType(event.getType());
+	        message.setTimestamp(event.getTimestamp());
+		
+	}
+
+}

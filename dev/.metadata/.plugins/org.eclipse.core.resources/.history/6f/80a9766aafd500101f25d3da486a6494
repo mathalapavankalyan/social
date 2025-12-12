@@ -1,0 +1,9 @@
+package com.notification.service;
+
+import com.notification.dto.ChatMessageEvent;
+
+public interface NotificationService {
+
+	void sendNotification(ChatMessageEvent event);
+
+}

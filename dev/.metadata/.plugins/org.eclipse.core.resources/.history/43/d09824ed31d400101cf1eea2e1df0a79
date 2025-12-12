@@ -1,0 +1,24 @@
+package com.websocket.controller;
+
+import org.springframework.messaging.handler.annotation.MessageMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.websocket.dto.ChatMessageEvent;
+import com.websocket.kafka.KafkaProducerService;
+
+import lombok.AllArgsConstructor;
+
+@RestController
+@AllArgsConstructor
+public class WebSocketController {
+	
+	private final KafkaProducerService kafkaProducer;
+	
+	@MessageMapping("/send")
+	public String receiveMessage(ChatMessageEvent event) {
+	    kafkaProducer.send("message-sent", event);
+	    return "Message sent to Kafka (message-sent topic)";
+	}
+
+
+}

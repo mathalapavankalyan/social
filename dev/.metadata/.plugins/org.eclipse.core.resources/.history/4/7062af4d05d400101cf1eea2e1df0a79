@@ -1,0 +1,7 @@
+package com.gateway.service;
+
+import com.gateway.dto.ChatMessageEvent;
+
+public interface WebSocketService {
+    void sendToUser(String userId, ChatMessageEvent event);
+}

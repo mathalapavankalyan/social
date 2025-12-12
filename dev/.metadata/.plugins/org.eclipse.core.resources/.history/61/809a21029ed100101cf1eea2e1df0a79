@@ -1,0 +1,36 @@
+package com.user.helper;
+
+import java.io.IOException;
+
+import org.bson.types.ObjectId;
+import org.springframework.data.mongodb.gridfs.GridFsTemplate;
+import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
+
+import lombok.AllArgsConstructor;
+
+@Service
+@AllArgsConstructor
+public class GridService {
+	
+	
+	private final GridFsTemplate gridFsTemplate;
+	
+	public ObjectId saveFile(MultipartFile profilepictureFile) {
+		ObjectId fileId = null;
+		try {
+			 fileId = gridFsTemplate.store(
+					profilepictureFile.getInputStream(),
+					profilepictureFile.getOriginalFilename(),
+					profilepictureFile.getContentType());
+				return fileId;
+			
+		} catch (IOException e) {
+			throw new RuntimeException("Failed to store file", e);
+		}
+		
+		
+		
+	}
+
+}

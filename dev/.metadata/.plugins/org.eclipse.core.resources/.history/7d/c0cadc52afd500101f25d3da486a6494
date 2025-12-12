@@ -1,0 +1,14 @@
+package com.notification.service.impl;
+
+import com.notification.dto.ChatMessageEvent;
+import com.notification.service.NotificationService;
+
+public class NotificationServiceImpl implements NotificationService{
+
+	@Override
+	public void sendNotification(ChatMessageEvent event) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

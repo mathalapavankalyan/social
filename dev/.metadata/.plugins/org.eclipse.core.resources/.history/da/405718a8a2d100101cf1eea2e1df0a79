@@ -1,0 +1,12 @@
+package com.user.mapper;
+
+import org.mapstruct.Mapper;
+
+import com.user.collection.User;
+import com.user.dto.UserDto;
+
+@Mapper(componentModel = "spring")
+public interface UserMapper {
+    public User toEntity(UserDto userDto);
+    public UserDto toDto(UserDto userDto);
+}

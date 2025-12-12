@@ -1,0 +1,26 @@
+package com.notification.service.impl;
+
+import org.springframework.stereotype.Service;
+
+import com.notification.dto.ChatMessageEvent;
+import com.notification.service.NotificationService;
+
+import lombok.extern.slf4j.Slf4j;
+
+@Service
+@Slf4j
+public class NotificationServiceImpl implements NotificationService{
+
+	@Override
+	public void sendNotification(ChatMessageEvent event) {
+		
+		  log.info(" Notification Sent!");
+	        log.info("Sender: {}", event.getSenderId());
+	        log.info("Receiver: {}", event.getReceiverId());
+	        log.info("Content: {}", event.getContent());
+	        log.info("Type: {}", event.getType());
+	        log.info("Message ID: {}", event.getMessageId());
+	        log.info("Timestamp: {}", event.getTimestamp());
+	}
+
+}

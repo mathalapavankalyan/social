@@ -1,0 +1,27 @@
+package com.user.service;
+
+import org.bson.types.ObjectId;
+import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
+
+import com.user.collection.User;
+import com.user.helper.GridService;
+import com.user.repository.UserRepository;
+
+import lombok.AllArgsConstructor;
+
+@Service
+@AllArgsConstructor
+public class UserService {
+	
+	private final GridService gridService;
+	
+	private final UserRepository userRepository;
+
+	public  String uploadProfilePicture(ObjectId userId, MultipartFile profilePictureFile) {
+		
+		User user = userRepository.findById(userId).get();
+		return null;
+	}
+
+}

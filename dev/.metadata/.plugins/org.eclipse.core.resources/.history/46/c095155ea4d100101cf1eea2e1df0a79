@@ -1,0 +1,36 @@
+package com.user.service;
+
+import org.bson.types.ObjectId;
+import org.springframework.data.mongodb.gridfs.GridFsResource;
+import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
+
+import com.user.collection.User;
+import com.user.dto.UserDto;
+import com.user.mapper.UserMapper;
+import com.user.service.impl.UserServiceImpl;
+
+import lombok.AllArgsConstructor;
+
+@Service
+@AllArgsConstructor
+public class UserService {
+	UserServiceImpl userServiceImpl;
+	
+	public  String uploadProfilePicture(ObjectId userId, MultipartFile profilePictureFile) {
+		
+		return userServiceImpl.uploadProfilePicture(userId, profilePictureFile);
+	}
+
+	public GridFsResource getProfileImage(ObjectId userId) {
+
+	  
+	    return userServiceImpl.getProfileImage(userId);
+	}
+	
+	
+	 public UserDto createUser(UserDto dto) {
+	      return userServiceImpl.createUser(dto);
+	    }
+
+}

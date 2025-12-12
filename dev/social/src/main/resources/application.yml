@@ -1,0 +1,23 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: social
+
+  mongodb:
+      uri: mongodb://localhost:27017/messenger_db
+
+
+
+logging:
+  level:
+    root: INFO
+    "[org.springframework.web]": DEBUG
+    "[org.springframework.data.mongodb]": DEBUG
+    "[com.messenger]": DEBUG
+
+# JWT settings
+jwt:
+  secret: "your-super-secret-key-change-this"
+  expiration: 86400000  # 1 day in ms

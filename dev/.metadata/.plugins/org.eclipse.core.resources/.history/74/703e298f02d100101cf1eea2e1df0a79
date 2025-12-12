@@ -1,0 +1,7 @@
+package com.auth.repository;
+
+import com.auth.collection.Authentication;
+
+public interface AuthRepository extends MongoRepository<Authentication , String> {
+
+}

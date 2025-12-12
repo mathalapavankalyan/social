@@ -1,0 +1,9 @@
+package com.auth.repository;
+
+import org.springframework.data.mongodb.repository.MongoRepository;
+
+import com.auth.collection.Authentication;
+
+public interface AuthRepository extends MongoRepository<Authentication , String> {
+
+}

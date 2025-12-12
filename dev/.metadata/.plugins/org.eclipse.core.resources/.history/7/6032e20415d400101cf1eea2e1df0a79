@@ -1,0 +1,14 @@
+package com.message.service;
+
+import org.springframework.stereotype.Service;
+
+import com.message.dto.ChatMessageEvent;
+
+@Service
+public interface MessageService {
+
+
+	    void saveIncomingMessage(ChatMessageEvent event);
+	
+
+}

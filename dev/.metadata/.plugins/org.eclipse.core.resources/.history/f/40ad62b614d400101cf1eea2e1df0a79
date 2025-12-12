@@ -1,0 +1,7 @@
+package com.message.service.impl;
+
+import com.message.service.MessageService;
+
+public class MessageServiceImpl implements MessageService{
+
+}

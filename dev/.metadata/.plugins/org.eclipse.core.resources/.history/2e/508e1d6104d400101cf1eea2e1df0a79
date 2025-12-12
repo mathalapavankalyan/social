@@ -1,0 +1,5 @@
+package com.websocket.kafka;
+
+public class WebSocket {
+
+}

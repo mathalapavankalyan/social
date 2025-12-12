@@ -1,0 +1,48 @@
+package com.message.controller;
+
+import java.util.List;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.message.collection.Message;
+import com.message.dto.ChatMessageEvent;
+import com.message.service.MessageService;
+
+import lombok.RequiredArgsConstructor;
+
+@RestController
+@RequestMapping("/messages")
+@RequiredArgsConstructor
+public class MessageController {
+
+    private final MessageService messageService;
+
+    // Get chat history between two users
+    @GetMapping("/{senderId}/{receiverId}")
+    public List<Message> getChatHistory(
+            @PathVariable String senderId,
+            @PathVariable String receiverId) {
+
+        return messageService.getChatHistory(senderId, receiverId);
+    }
+
+    // Get all messages for a given user (optional)
+    @GetMapping("/{userId}")
+    public List<Message> getAllMessagesForUser(
+            @PathVariable String userId) {
+
+        return messageService.getAllMessagesForUser(userId);
+    }
+    
+    @PostMapping("/test-send")
+    public String testSend(@RequestBody ChatMessageEvent event) {
+        messageService.saveIncomingMessage(event);
+        return "Message processed manually!";
+    }
+
+}
